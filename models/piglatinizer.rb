@@ -5,17 +5,13 @@ class PigLatinizer
 def piglatinize(text)
 
   vowels = ["A", "E", "I", "O", "U", "a", "e", "i", "o", "u"]
-  text_arr = text.split(//)
-  new_pig_word = " "
+  
+    text_arr = text.split(//)
+    new_pig_word = " "
 
-binding.pry
-  if vowels.include?(text_arr.first)
+
+  if vowels.include?(text_arr.first) || text_arr.count == 1
     new_pig_word = text + "way"
-  #  binding.pry
-  end
-  if text_arr.count == 1
-
-    new_pig_word = text_arr.join + "way"
 
   else
    text_arr.each_with_index do |letter, index|
@@ -26,10 +22,14 @@ binding.pry
       return new_pig_word
     end
   end
-
-  end
+end
   new_pig_word
+
 end
+
+def sentence_split(sentence)
+
 end
-# new_pig = PigLatinizer.new
-# new_pig.piglatinize("word")
+
+
+end
