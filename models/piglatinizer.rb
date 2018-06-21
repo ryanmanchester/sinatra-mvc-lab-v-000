@@ -33,6 +33,6 @@ end
 end
 
 def sentence_split(sentence)
-  sentence.split(" ")
+  sentence.split(//)
 end
 end
