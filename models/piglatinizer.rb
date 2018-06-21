@@ -2,7 +2,7 @@ require 'pry'
 class PigLatinizer
 
 def piglatinize(text)
-  words = sentence_split(text)
+  words = text.split(" ")
 
   words = words.collect do |word|
     latinize(word)
