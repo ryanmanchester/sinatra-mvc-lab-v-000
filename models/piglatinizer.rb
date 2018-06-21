@@ -15,7 +15,7 @@ def latinize(text)
   vowels = ["A", "E", "I", "O", "U", "a", "e", "i", "o", "u"]
   new_pig_word = " "
 
-  text_arr = sentence_split(text)
+  text_arr = text.split(//)
 
   if vowels.include?(text_arr.first)
     new_pig_word = text + "way"
@@ -32,7 +32,5 @@ end
   new_pig_word
 end
 
-def sentence_split(sentence)
-  sentence.split(//)
-end
+
 end
