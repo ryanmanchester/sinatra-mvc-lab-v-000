@@ -1,18 +1,24 @@
 require 'pry'
 class PigLatinizer
 
-
 def piglatinize(text)
+  words = text.split(" ")
 
+  words = words.collect do |word|
+    latinize(word)
+  end
+
+  words.join(" ")
+end
+
+def latinize(text)
   vowels = ["A", "E", "I", "O", "U", "a", "e", "i", "o", "u"]
-  
-    text_arr = text.split(//)
-    new_pig_word = " "
+  new_pig_word = " "
 
+  text_arr = sentence_split(text)
 
-  if vowels.include?(text_arr.first) || text_arr.count == 1
+  if vowels.include?(text_arr.first)
     new_pig_word = text + "way"
-
   else
    text_arr.each_with_index do |letter, index|
     if vowels.include?(letter)
@@ -24,12 +30,9 @@ def piglatinize(text)
   end
 end
   new_pig_word
-
 end
 
 def sentence_split(sentence)
-
+  sentence.gsub(" ", "").split(//)
 end
-
-
 end
